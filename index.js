@@ -37,6 +37,51 @@ for (let i = 0; i < itemsNav.length; i++) {
 
 /* ---------------------------------------------------- */
 
+// Abrir Menú Mobile // 
+
+let menuMobile = document.getElementById ("menuMobile")
+let contMenuMobile = document.getElementById ("container-mobile")
+
+let abrirMenuMobile = () => {
+    if ("click") {
+        contMenuMobile.style.display =  "flex";
+        contMenuMobile.style.animation = "mover 2s forwards"
+    }
+}
+
+menuMobile.addEventListener ("click", abrirMenuMobile)
+
+// Cerrar Menú Mobile X //
+
+let xSalida = document.getElementById ("xSalida")
+
+let cerrarMenuMobile = () => {
+    if ("click") {
+        contMenuMobile.style.animation = "mover 2s forwards"
+        contMenuMobile.style.display = "none";
+        
+    }
+}
+
+xSalida.addEventListener ("click", cerrarMenuMobile)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Efecto Máquina //
 
 let texto = document.getElementById ("text")
