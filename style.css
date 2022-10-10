@@ -11,16 +11,16 @@
     width: 150px;
     height: 150px;
     position: absolute;
-    top: 20px;
+    top: 50px;
     left: 30%;
 }
 
 .menuMobile {
-    width: 35px;
+    width: 40px;
     height: 40px;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 15px;
 }
 
 .xSalida {
@@ -34,7 +34,6 @@
 
 .header {
     height: 200px;
-    background-color: #DD5353;
 }
 
 .container-mobile {
@@ -136,7 +135,7 @@ li {
     justify-content: center;
     align-items: center;
     animation: inicio 4s;
-    margin: 1rem;
+    margin-top: 1rem;
 }
 
 .img {
@@ -153,7 +152,7 @@ li {
 }
 
 .sect1Desc {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
 }
@@ -161,7 +160,7 @@ li {
 .btnMas {
     width: 75px;
     height: 40px;
-    background-color: red;
+    background-color: black;
     color: #e2dede;
     font-weight: bold;
     font-size: 1rem;

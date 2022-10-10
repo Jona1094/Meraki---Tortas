@@ -69,9 +69,9 @@ xSalida.addEventListener ("click", cerrarMenuMobile)
 let sect1 = document.getElementById ("sect1")
 
 let Inicio = [{
-    "titulo": "Tortas",
-    "desc": "las mejores tortas de Argentina",
-    "imagen": "./imagenes/alfajores.png"},
+    "titulo": "Alfajores",
+    "desc": "Alfajores de colores rellenos. Varios gustos!",
+    "imagen": "./imagenes/alfajoresInicio.png"},
     {"titulo": "Muffins",
     "desc": "los mejores muffins de LATAM",
     "imagen": "./imagenes/muffins.jpeg"},
@@ -84,15 +84,17 @@ let Inicio = [{
 
     let mostrarInicio = (titulo, desc, imagen) => {
         let div = document.createElement ("DIV");
-        let imgg = document.createElement ("IMG")
+        let imgg = document.createElement ("IMG");
+        let divCirculo = document.createElement ("DIV");
         let h1 = document.createElement ("H1");
         let p = document.createElement ("P");
         let btnMas = document.createElement ("BUTTON")
 
+        div.appendChild (divCirculo);
         div.appendChild (h1);
         div.appendChild (p);
         div.appendChild (imgg);
-        div.appendChild (btnMas)
+        div.appendChild (btnMas);
 
         imgg.setAttribute ("src", imagen);
         h1.textContent = titulo;
@@ -104,6 +106,7 @@ let Inicio = [{
         h1.classList.add ("sect1Titulo")
         p.classList.add ("sect1Desc")
         btnMas.classList.add ("btnMas")
+        divCirculo.classList.add ("divCirculo")
 
         return div;
     }
