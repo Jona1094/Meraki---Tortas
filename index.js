@@ -44,9 +44,9 @@ let contMenuMobile = document.getElementById ("container-mobile")
 
 let abrirMenuMobile = () => {
     if ("click") {
-        contMenuMobile.style.display =  "flex";
-        contMenuMobile.style.animation = "mover 2s forwards"
-    }
+        contMenuMobile.style.display =  "block";
+        contMenuMobile.classList.add ("abrirNav")
+    } 
 }
 
 menuMobile.addEventListener ("click", abrirMenuMobile)
@@ -57,13 +57,56 @@ let xSalida = document.getElementById ("xSalida")
 
 let cerrarMenuMobile = () => {
     if ("click") {
-        contMenuMobile.style.animation = "mover 2s forwards"
         contMenuMobile.style.display = "none";
-        
+        contMenuMobile.classList.add ("cerrarNav")
     }
 }
 
 xSalida.addEventListener ("click", cerrarMenuMobile)
+
+// SECT 1 - INICIO //
+
+let sect1 = document.getElementById ("sect1")
+
+let imgInicio = [{
+    "titulo": "Tortas",
+    "desc": "las mejores tortas de Argentina",
+    "imagen": "../imagenes/alfajores.png"},
+    {"titulo": "Muffins",
+    "desc": "los mejores muffins de LATAM",
+    "imagen": "../imagenes/muffins.jpeg"}];
+
+    let mostrarInicio = (titulo, desc, imagen) => {
+        let div = document.createElement ("DIV");
+        let imgg = document.createElement ("IMG")
+        let h1 = document.createElement ("H1");
+        let p = document.createElement ("P");
+
+        div.appendChild (h1);
+        div.appendChild (p);
+        div.appendChild (imgg);
+
+        imgg.setAttribute ("src", imagen);
+        h1.textContent = titulo;
+        p.textContent = desc;
+        
+        div.classList.add ("sect1Inicio")
+        imgg.classList.add ("img")
+        h1.classList.add ("sect1Titulo")
+        p.classList.add ("sect1Desc")
+
+        return div;
+    }
+
+    let elementoTemporal = document.createDocumentFragment();
+
+for (let i = 0; i < imgInicio.length; i++) {
+	let nuevaFruta = mostrarInicio(imgInicio[i].titulo,imgInicio[i].desc,imgInicio[i].imagen);
+	elementoTemporal.appendChild(nuevaFruta);
+}
+
+sect1.appendChild(elementoTemporal)
+
 
 
 
