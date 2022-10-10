@@ -68,13 +68,13 @@ xSalida.addEventListener ("click", cerrarMenuMobile)
 
 let sect1 = document.getElementById ("sect1")
 
-let imgInicio = [{
+let Inicio = [{
     "titulo": "Tortas",
     "desc": "las mejores tortas de Argentina",
-    "imagen": "../imagenes/alfajores.png"},
+    "imagen": "./imagenes/alfajores.png"},
     {"titulo": "Muffins",
     "desc": "los mejores muffins de LATAM",
-    "imagen": "../imagenes/muffins.jpeg"}];
+    "imagen": "./imagenes/muffins.jpeg"}];
 
     let mostrarInicio = (titulo, desc, imagen) => {
         let div = document.createElement ("DIV");
@@ -100,9 +100,9 @@ let imgInicio = [{
 
     let elementoTemporal = document.createDocumentFragment();
 
-for (let i = 0; i < imgInicio.length; i++) {
-	let nuevaFruta = mostrarInicio(imgInicio[i].titulo,imgInicio[i].desc,imgInicio[i].imagen);
-	elementoTemporal.appendChild(nuevaFruta);
+for (let i = 0; i < Inicio.length; i++) {
+	let inicioCajas = mostrarInicio(Inicio[i].titulo,Inicio[i].desc,Inicio[i].imagen);
+	elementoTemporal.appendChild(inicioCajas);
 }
 
 sect1.appendChild(elementoTemporal)
