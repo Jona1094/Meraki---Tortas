@@ -74,6 +74,12 @@ let Inicio = [{
     "imagen": "./imagenes/alfajores.png"},
     {"titulo": "Muffins",
     "desc": "los mejores muffins de LATAM",
+    "imagen": "./imagenes/muffins.jpeg"},
+    {"titulo": "Muffins",
+    "desc": "los mejores muffins de LATAM",
+    "imagen": "./imagenes/muffins.jpeg"},
+    {"titulo": "Muffins",
+    "desc": "los mejores muffins de LATAM",
     "imagen": "./imagenes/muffins.jpeg"}];
 
     let mostrarInicio = (titulo, desc, imagen) => {
@@ -81,19 +87,23 @@ let Inicio = [{
         let imgg = document.createElement ("IMG")
         let h1 = document.createElement ("H1");
         let p = document.createElement ("P");
+        let btnMas = document.createElement ("BUTTON")
 
         div.appendChild (h1);
         div.appendChild (p);
         div.appendChild (imgg);
+        div.appendChild (btnMas)
 
         imgg.setAttribute ("src", imagen);
         h1.textContent = titulo;
         p.textContent = desc;
+        btnMas.innerHTML += ("Ver más")
         
         div.classList.add ("sect1Inicio")
         imgg.classList.add ("img")
         h1.classList.add ("sect1Titulo")
         p.classList.add ("sect1Desc")
+        btnMas.classList.add ("btnMas")
 
         return div;
     }

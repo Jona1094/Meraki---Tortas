@@ -109,7 +109,7 @@ li {
 @keyframes inicio {
     0% {
         opacity: 0;
-        transform: translateY(-40px);
+        transform: translateY(60px);
     }
     50% {
         opacity: 0.8;
@@ -125,37 +125,52 @@ li {
     font-family: 'Alegreya Sans', sans-serif;
     text-align: center;
     margin-top: 3rem;
+    margin-bottom: 1rem;
     padding: 5px;
     border: ridge 1px red;
 }
 
 .sect1Inicio {
-    height: 300px;
-    margin: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     animation: inicio 4s;
+    margin: 1rem;
 }
 
 .img {
-    width: 200px;
-    height: 200px;
-    margin: 1rem;
+    width: 290px;
+    height: 290px;
+    margin:1rem;
 }
 
 .sect1Titulo {
     font-size: 1.5rem;
     font-family: 'Roboto Condensed', sans-serif;
     text-align: center;
-    padding: 1rem;
+    padding: 7px;
 }
 
 .sect1Desc {
     font-size: 1.5rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
+}
+
+.btnMas {
+    width: 75px;
+    height: 40px;
+    background-color: red;
+    color: #e2dede;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.btnMas:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 }
