@@ -11,8 +11,8 @@
     width: 150px;
     height: 150px;
     position: absolute;
-    top: 50px;
-    left: 30%;
+    top: 30px;
+    left: 25%;
 }
 
 .menuMobile {
@@ -123,8 +123,8 @@ li {
     font-size: 2rem;
     font-family: 'Alegreya Sans', sans-serif;
     text-align: center;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
+    margin-top: 1.2rem;
+    margin-bottom: 3rem;
     padding: 5px;
     border: ridge 1px red;
 }
@@ -138,10 +138,25 @@ li {
     margin-top: 1rem;
 }
 
+.divCirculo {
+    width: 300px;
+    height: 300px;
+    border: solid violet 1px;
+    transform: rotate(45deg);
+    z-index: -2;
+    position: absolute;
+    stroke-dasharray: 1000;
+}
+
 .img {
     width: 290px;
     height: 290px;
     margin:1rem;
+}
+
+.img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 3px 1px rgb(14, 12, 12);
 }
 
 .sect1Titulo {

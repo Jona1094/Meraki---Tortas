@@ -71,18 +71,22 @@ let sect1 = document.getElementById ("sect1")
 let Inicio = [{
     "titulo": "Alfajores",
     "desc": "Alfajores de colores rellenos. Varios gustos!",
-    "imagen": "./imagenes/alfajoresInicio.png"},
+    "imagen": "./imagenes/tortaMitad.png",
+    "boton": "Ver más"},
     {"titulo": "Muffins",
     "desc": "los mejores muffins de LATAM",
-    "imagen": "./imagenes/muffins.jpeg"},
+    "imagen": "./imagenes/alfajoresInicio.png",
+    "boton": "Ver más"},
     {"titulo": "Muffins",
     "desc": "los mejores muffins de LATAM",
-    "imagen": "./imagenes/muffins.jpeg"},
+    "imagen": "./imagenes/muffins.jpeg",
+    "boton": "Ver más"},
     {"titulo": "Muffins",
     "desc": "los mejores muffins de LATAM",
-    "imagen": "./imagenes/muffins.jpeg"}];
+    "imagen": "./imagenes/muffins.jpeg",
+    "boton": "Ver más"}];
 
-    let mostrarInicio = (titulo, desc, imagen) => {
+    let mostrarInicio = (titulo, desc, imagen, boton) => {
         let div = document.createElement ("DIV");
         let imgg = document.createElement ("IMG");
         let divCirculo = document.createElement ("DIV");
@@ -99,8 +103,10 @@ let Inicio = [{
         imgg.setAttribute ("src", imagen);
         h1.textContent = titulo;
         p.textContent = desc;
-        btnMas.innerHTML += ("Ver más")
-        
+        btnMas.textContent = boton;
+        btnMas.setAttribute ("id", "btn")
+        /* btnMas.innerHTML += ("Ver más") */
+
         div.classList.add ("sect1Inicio")
         imgg.classList.add ("img")
         h1.classList.add ("sect1Titulo")
@@ -114,13 +120,15 @@ let Inicio = [{
     let elementoTemporal = document.createDocumentFragment();
 
 for (let i = 0; i < Inicio.length; i++) {
-	let inicioCajas = mostrarInicio(Inicio[i].titulo,Inicio[i].desc,Inicio[i].imagen);
+	let inicioCajas = mostrarInicio(Inicio[i].titulo,Inicio[i].desc,Inicio[i].imagen, Inicio[i].boton);
 	elementoTemporal.appendChild(inicioCajas);
 }
 
 sect1.appendChild(elementoTemporal)
 
+//
 
+let verMas = document.getElementById ("btn")
 
 
 
