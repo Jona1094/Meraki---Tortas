@@ -7,20 +7,40 @@
 
 @media screen and (max-width: 600px) {
 
+body::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    border-right: 2px solid #EA047E;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #EA047E;
+    border-radius: 5px;
+}
+
 .logo {
+    width: 95px;
+    height: 95px;
+    position: absolute;
+    top: 22px;
+    left: 15%;
+}
+
+.logoMostrar {
+    z-index: 1;
     width: 150px;
     height: 150px;
     position: absolute;
-    top: 30px;
+    top: 80px;
     left: 25%;
 }
 
 .menuMobile {
     width: 40px;
-    height: 40px;
+    height: 45px;
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 45px;
+    right: 30px;
 }
 
 .xSalida {
@@ -33,13 +53,28 @@
 }
 
 .header {
-    height: 200px;
+    /* height: 150px;
+    background-color: #B73E3E; */
+    font-size: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 150px;
+    padding: 20px 80px;
+    transition: all 1.5s;
+}
+
+header.down{
+    background: rgba(192, 52, 52, 0.356);
+    padding: 15px 80px;
+    transition: all 1.5s;
 }
 
 .container-mobile {
     height: 100vh;
-    width: 50%;
-    background-color: #f8ecdc;
+    width: 100vw;
+    background-color: #EA047E;
     position: absolute;
     right: 0;
     display: none;
@@ -59,6 +94,7 @@
     }
     100% {
         opacity: 1;
+      
     }
 }
 
@@ -74,8 +110,7 @@
 .ul {
     display: flex;
     flex-direction: column;
-    margin-top: 10rem;
-    align-content: center;
+    margin:auto;
 }
 
 li {
@@ -84,11 +119,10 @@ li {
 }
 
 .navItem {
-    color: #B73E3E;
+    color: #f7f4f4;
     text-decoration: none;
     font-size: 1.3rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
+    font-family: 'Kanit', sans-serif;
 }
 
 .navLink:hover, .navItem:hover {
@@ -98,11 +132,20 @@ li {
 
 /* SECT 1: INICIO */
 
+#body {
+/*     background-image: url(./imagenes/fondo5.jpeg);
+    background-size: 100vw 70vh;
+    background-repeat: no-repeat; */
+}
+
 .sect1 {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh;
+ /*    background-image: url(./imagenes/fondoInicio2.jpeg);
+    background-size: 100vw 70vh;
+    background-repeat: no-repeat; */
 }
 
 @keyframes inicio {
@@ -115,18 +158,19 @@ li {
        
     }
     100% {
-        opacity: 1.5;
+        opacity: 2;
     }
 }
 
 .textInicio {
-    font-size: 2rem;
+    font-size: 2.3rem;
     font-family: 'Alegreya Sans', sans-serif;
+    font-weight: bold;
     text-align: center;
-    margin-top: 1.2rem;
-    margin-bottom: 3rem;
+    margin-top: 10rem;
+    margin-bottom: 2rem;
     padding: 5px;
-    border: ridge 1px red;
+    color: #1b0909;
 }
 
 .sect1Inicio {
@@ -134,28 +178,19 @@ li {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    animation: inicio 4s;
+    animation: inicio 2s;
     margin-top: 1rem;
 }
 
-.divCirculo {
-    width: 300px;
-    height: 300px;
-    border: solid violet 1px;
-    transform: rotate(45deg);
-    z-index: -2;
-    position: absolute;
-    stroke-dasharray: 1000;
-}
-
-.img {
-    width: 290px;
-    height: 290px;
+.imgInicio {
+    width: 330px;
+    height: 330px;
     margin:1rem;
+    border-radius: 20px;
+    object-fit: cover;
 }
 
 .img:hover {
-    transform: scale(1.05);
     box-shadow: 0px 0px 3px 1px rgb(14, 12, 12);
 }
 
@@ -187,4 +222,177 @@ li {
     transform: scale(1.1);
 }
 
+/* modal */
+
+.containerModal {
+    width: 100vw;
+    height: 100vh;
+    background-color: #B73E3E;
+    z-index: 1;
+}
+
+.modal {
+    height: 100vh;
+}
+
+.imgModal {
+    width: 290px;
+    height: 290px;
+    margin:1rem;
+}
+
+/* Productos */
+
+.prod1 {
+    
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.prod1__titulo {
+    color: wheat;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 100;
+}
+
+.divImg {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.imgProd {
+    width: 90px;
+    height: 150px;
+}
+
+/* slider */
+
+#sect2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.sliderSect2 {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+}
+
+/* CUBO */
+
+.presentacion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    z-index: 50;
+}
+
+.presentacion-salida {
+    display: none;
+}
+
+.eze {
+    text-align: center;
+    cursor: pointer;
+    font-size: 3rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.imgeze {
+    width: 330px;
+    height: 330px;
+    
+}
+
+.principal {
+    margin: auto;
+    margin-top: 6rem;
+    width: 70vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+}
+
+.container {
+    width: 500px;
+    height: 500px;
+    transform-style: preserve-3d;
+    animation: girar 2s infinite linear;
+}
+
+
+.cara img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cara {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    /* backface-visibility: hidden; */ /* oculta la parte trasera */
+}
+
+.cajita1 {
+    transform: translateZ(150px);
+}
+
+.cajita2 {
+    
+    transform: translateX(150px) rotateY(90deg);   
+}
+
+.cajita3 {
+  transform: translateZ(-150px);
+    
+}
+
+.cajita4 {
+  transform: translateX(-150px) rotateY(90deg);
+} 
+
+.cajita5 {
+    transform: translateY(-150px) rotateX(90deg);
+}
+
+.cajita6 {
+    transform: translateY(150px) rotateX(90deg);
+}
+
+
+@keyframes girar {
+    0% {
+        transform: rotateY(0deg) rotateX(0deg);
+    }  
+    
+    100% {
+        transform: rotateY(360deg) rotateX(360deg);
+    }
+};  
+
+.padre {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1rem;
+    display: none;
+}
+
+.jeje {
+    display: none;
+}
+
+.imgg {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
 }
