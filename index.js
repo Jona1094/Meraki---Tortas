@@ -17,7 +17,7 @@ const navBar = (item, page, img) => {
     
 
     imgWpp.setAttribute("src", img);
-    href.setAttribute("href", page);
+    href.setAttribute("href", itemsNav[2].page);
     href.textContent = item;
     li.classList.add ("navItem")
     href.classList.add ("navLink")
@@ -38,6 +38,30 @@ for (let i = 0; i < itemsNav.length; i++) {
 /* ---------------------------------------------------- */
 
 
+
+
+
+
+
+
+
+// Efecto Máquina //
+
+let texto = document.getElementById ("text")
+let str = texto.innerHTML;
+texto.innerHTML = "";
+let speed = 100;
+let i = 0;
+
+function efectoMaquina () {
+    if (i < str.length) {
+        text.innerHTML += str.charAt(i); i++;
+    }
+    setTimeout (efectoMaquina, speed)
+}
+
+setTimeout (efectoMaquina, speed)
+
 /* SCROLL */
 
 let ubicacionPrincipal = window.pageYOffset;
@@ -52,7 +76,6 @@ window.onscroll = function(){
         header.style.top = "-125px"
     }
     ubicacionPrincipal = desplazamientoActual;
-
 } 
 
 // Abrir Menú Mobile // 
@@ -68,6 +91,7 @@ let abrirMenuMobile = () => {
         contMenuMobile.classList.remove ("cerrarNav")
         imgLogo.classList.add ("logoMostrar")
         imgLogo.classList.remove ("logo")
+        header.classList.remove ("header down")
     } 
 }
 
@@ -83,7 +107,6 @@ let cerrarMenuMobile = () => {
         contMenuMobile.classList.add ("cerrarNav")
         imgLogo.classList.remove ("logoMostrar")
         imgLogo.classList.add ("logo")
-
     }
 }
 
@@ -134,14 +157,16 @@ let Inicio = [{
         h1.classList.add ("sect1Titulo")
         p.classList.add ("sect1Desc")
         btnMas.classList.add ("btnMas")
+        
 
         // Modal //
 
-let modalContainer = document.createElement ("DIV")
-let modal = document.createElement ("DIV")
-let imgModal = document.createElement ("IMG")
+btnMas.addEventListener ("click", ()=>{
 
-let abrirModal = () => {
+    let modalContainer = document.createElement ("DIV")
+    let modal = document.createElement ("DIV")
+    let imgModal = document.createElement ("IMG")
+    
     imgModal.setAttribute ("src", imagen)
     
     modalContainer.appendChild (modal)
@@ -150,13 +175,13 @@ let abrirModal = () => {
     modalContainer.classList.add ("containerModal")
     modal.classList.add ("modal")
     imgModal.classList.add ("imgModal")
+
+    div.appendChild(modalContainer)
+})
+        return div;
 }
 
-btnMas.addEventListener ("click", abrirModal)
-        return div;
-    }
-
-    let elementoTemporal = document.createDocumentFragment();
+let elementoTemporal = document.createDocumentFragment();
 
 for (let i = 0; i < Inicio.length; i++) {
 	let inicioCajas = mostrarInicio(Inicio[i].titulo,Inicio[i].desc,Inicio[i].imagen, Inicio[i].boton);
@@ -165,25 +190,8 @@ for (let i = 0; i < Inicio.length; i++) {
 
 sect1.appendChild(elementoTemporal);
 
-// Efecto Máquina //
-
-let texto = document.getElementById ("text")
-let str = texto.innerHTML;
-texto.innerHTML = "";
-let speed = 100;
-let i = 0;
-
-function efectoMaquina () {
-    if (i < str.length) {
-        text.innerHTML += str.charAt(i); i++;
-    }
-    setTimeout (efectoMaquina, speed)
-}
-
-setTimeout (efectoMaquina, speed)
-
-
 // SECT 2 //
+
 /* let sect2 = document.getElementById ("sliderSect2")
 sect2.addEventListener('load', function (){
     let imagenes = [];
@@ -208,8 +216,104 @@ sect2.addEventListener('load', function (){
 
 }) */
 
+// SECT 2 //
+
+    let sect2 = document.getElementById ("sect2")
+    let divContCirc = document.createElement ("DIV")
+    let divCirc = document.createElement ("DIV")
+    let imgInicio = document.createElement ("IMG")
+    let divContText = document.createElement ("DIV")
+    let frase1I = document.createElement ("H1")
+    let frase2I = document.createElement ("H1")
+    /* let btnInicio = document.createElement ("BUTTON") */
+
+    sect2.appendChild (divContCirc)
+    divContCirc.appendChild (divCirc)
+    divContCirc.appendChild (imgInicio)
+    sect2.appendChild (divContText)
+    divContText.appendChild (frase1I)
+    divContText.appendChild (frase2I)
+   /*  divContText.appendChild (btnInicio) */
+
+    imgInicio.setAttribute ("src", "../imagenes/tortaInicio1.png")
+    frase1I.innerHTML = "Disfrutar de un pastel es..."
+    frase2I.innerHTML = "Amor a primera mordida"
+    /* btnInicio.innerHTML = "Más info" */
+
+    sect2.classList.add ("sect2")
+    divContCirc.classList.add ("divContCirc")
+    divCirc.classList.add ("divCirc")
+    imgInicio.classList.add ("imgInicio2")
+    divContText.classList.add ("divContText")
+    frase1I.classList.add ("frase1I")
+    frase2I.classList.add ("frase2I")
+
+    // SECT 2 >> "APARICIÓN FRASE 1 Y 2"
+
+
+let text1 = document.querySelector('.frase1I')
+let text2 = document.querySelector('.frase2I')
+imgAparecer = document.querySelector('.imgInicio2')
+
+const aparecerTexto = (entradas, observador) => {
+    entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+            entrada.target.classList.add ('visible');
+        } else {
+            entrada.target.classList.remove ('visible')
+        }
+    })
+}
+
+const observador = new IntersectionObserver (aparecerTexto, {
+    rootMargin: "100px",
+    rootMargin: "0px 0px 0px 0px",
+    threshold: 1.0
+})
+
+observador.observe(text1)
+observador.observe(text2)
+observador.observe(imgAparecer)
+
+// SECT 2: CARRUSEL //
+
+/* let carrusel = document.createElement ("DIV")
+let carruselItems = document.createElement ("DIV")
+let carruselItem = document.createElement ("DIV")
+let carruselImg = document.createElement ("IMG")
+
+let carruselImagenes = ["torta.jpg", "alfajores.png", "muffins.jpeg"] */
 
 
 
 
 
+const carrusel = document.querySelector(".carrusel-items");
+
+let maxScrollLeft = carrusel.scrollWidth - carrusel.clientWidth;
+let intervalo = null;
+let step = 1;
+const start = () => {
+  intervalo = setInterval(function () {
+    carrusel.scrollLeft = carrusel.scrollLeft + step;
+    if (carrusel.scrollLeft === maxScrollLeft) {
+      step = step * -1;
+    } else if (carrusel.scrollLeft === 0) {
+      step = step * -1;
+    }
+  }, 10);
+};
+
+const stop = () => {
+  clearInterval(intervalo);
+};
+
+carrusel.addEventListener("mouseover", () => {
+  stop();
+});
+
+carrusel.addEventListener("mouseout", () => {
+  start();
+});
+
+start();
