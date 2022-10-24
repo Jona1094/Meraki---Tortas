@@ -91,7 +91,7 @@ let abrirMenuMobile = () => {
         contMenuMobile.classList.remove ("cerrarNav")
         imgLogo.classList.add ("logoMostrar")
         imgLogo.classList.remove ("logo")
-        header.classList.remove ("header down")
+        
     } 
 }
 
@@ -103,8 +103,8 @@ let xSalida = document.getElementById ("xSalida")
 
 let cerrarMenuMobile = () => {
     if ("click") {
-        contMenuMobile.style.display = "none";
         contMenuMobile.classList.add ("cerrarNav")
+        contMenuMobile.style.display = "none"
         imgLogo.classList.remove ("logoMostrar")
         imgLogo.classList.add ("logo")
     }
@@ -114,7 +114,9 @@ xSalida.addEventListener ("click", cerrarMenuMobile)
 
 // SECT 1 - INICIO //
 
-let sect1 = document.getElementById ("sect1")
+let contG = document.querySelector (".contenedor-general")
+let sect1 = document.createElement ("SECT")
+contG.appendChild (sect1)
 
 let Inicio = [{
     "titulo": "Alfajores",
@@ -192,33 +194,7 @@ sect1.appendChild(elementoTemporal);
 
 // SECT 2 //
 
-/* let sect2 = document.getElementById ("sliderSect2")
-sect2.addEventListener('load', function (){
-    let imagenes = [];
-
-    imagenes [0] = './imagenes/alfajores.png';
-    imagenes [1] = './imagenes/alfajoresInicio.png';
-    imagenes [2] = './imagenes/alfajoresInicio2.jpeg';
-
-    let indiceImagenes = 0;
-    let tiempo = 500;
-
-    function cambiarImagenes () {
-        document.slider.src = imagenes [indiceImagenes];
-
-        if (indiceImagenes < 2) {
-            indiceImagenes++
-        } else {
-            indiceImagenes = 0;
-        }
-    }
-    setInterval(cambiarImagenes, 2000)
-
-}) */
-
-// SECT 2 //
-
-    let sect2 = document.getElementById ("sect2")
+    let sect2 = document.createElement ("SECT")
     let divContCirc = document.createElement ("DIV")
     let divCirc = document.createElement ("DIV")
     let imgInicio = document.createElement ("IMG")
@@ -227,6 +203,7 @@ sect2.addEventListener('load', function (){
     let frase2I = document.createElement ("H1")
     /* let btnInicio = document.createElement ("BUTTON") */
 
+    contG.appendChild (sect2)
     sect2.appendChild (divContCirc)
     divContCirc.appendChild (divCirc)
     divContCirc.appendChild (imgInicio)
@@ -235,7 +212,7 @@ sect2.addEventListener('load', function (){
     divContText.appendChild (frase2I)
    /*  divContText.appendChild (btnInicio) */
 
-    imgInicio.setAttribute ("src", "../imagenes/tortaInicio1.png")
+    imgInicio.setAttribute ("src", "./imagenes/tortaInicio1.png")
     frase1I.innerHTML = "Disfrutar de un pastel es..."
     frase2I.innerHTML = "Amor a primera mordida"
     /* btnInicio.innerHTML = "Más info" */
@@ -249,7 +226,6 @@ sect2.addEventListener('load', function (){
     frase2I.classList.add ("frase2I")
 
     // SECT 2 >> "APARICIÓN FRASE 1 Y 2"
-
 
 let text1 = document.querySelector('.frase1I')
 let text2 = document.querySelector('.frase2I')
@@ -275,45 +251,48 @@ observador.observe(text1)
 observador.observe(text2)
 observador.observe(imgAparecer)
 
-// SECT 2: CARRUSEL //
-
-/* let carrusel = document.createElement ("DIV")
-let carruselItems = document.createElement ("DIV")
-let carruselItem = document.createElement ("DIV")
-let carruselImg = document.createElement ("IMG")
-
-let carruselImagenes = ["torta.jpg", "alfajores.png", "muffins.jpeg"] */
+// SECT 2: SLIDER //
 
 
 
+/* let containerSlider = document.createElement ("DIV")
+let slider = document.createElement ("DIV")
+let sliderSection = document.createElement ("DIV")
+let sliderImg = document.createElement ("IMG")
+let btnIzq = document.createElement ("DIV")
+let btnDer = document.createElement ("DIV")
+
+sect2.appendChild (containerSlider)
+containerSlider.appendChild (slider)
+containerSlider.appendChild (btnIzq) 
+containerSlider.appendChild (btnDer)
+slider.appendChild (sliderSection)
+sliderSection.appendChild (sliderImg)
+
+sliderImg.setAttribute ("src", item)
+containerSlider.classList.add ("containerSlider")
+slider.classList.add ("slider")
+sliderSection.classList.add ("sliderSection")
+sliderImg.classList.add ("sliderImg")
+
+btnIzq.classList.add ("btnIzq")
+btnDer.classList.add ("btnDer")
 
 
-const carrusel = document.querySelector(".carrusel-items");
 
-let maxScrollLeft = carrusel.scrollWidth - carrusel.clientWidth;
-let intervalo = null;
-let step = 1;
-const start = () => {
-  intervalo = setInterval(function () {
-    carrusel.scrollLeft = carrusel.scrollLeft + step;
-    if (carrusel.scrollLeft === maxScrollLeft) {
-      step = step * -1;
-    } else if (carrusel.scrollLeft === 0) {
-      step = step * -1;
-    }
-  }, 10);
-};
+let sliderImagenes = ["./imagenes/torta.jpg", "./imagenes/alfajores.png", "./imagenes/muffins.jpeg"] 
 
-const stop = () => {
-  clearInterval(intervalo);
-};
+mostrarSlider = () => {
+    let sliderSection = document.createElement ("DIV") 
+    let sliderImg = document.createElement ("IMG")
 
-carrusel.addEventListener("mouseover", () => {
-  stop();
-});
+    slider.appendChild (sliderSection)
+    sliderSection.appendChild (sliderImg)
+    sliderImg.setAttribute ("src", item)
+    sliderSection.classList.add ("sliderSection")
+    sliderImg.classList.add ("sliderImg")
 
-carrusel.addEventListener("mouseout", () => {
-  start();
-});
+    return sliderSection;
+} 
+ */
 
-start();
